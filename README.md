@@ -1,2 +1,2 @@
 # RadioESCOM
-Proyecto para pasar tecnologias web y aplicaciones
+Proyecto para entregar en asignatura de tecnologias web y aplicaciones
