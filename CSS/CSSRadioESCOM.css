@@ -1,0 +1,25 @@
+.topnav{
+    background-color: #542141;
+}
+.botnav{
+    background-color: #303443;
+}
+
+.btn.btn-1{
+    border-color: #006394;
+    background-color:  #006394;
+    color: aliceblue;
+}
+.colorTitulo{
+    font-style: oblique;
+    color: aliceblue;
+}
+.bottomtext{
+    font-style: oblique;
+    color: aliceblue;
+}
+.togglercolorRE{
+    color: #006394;
+    border-color: #006394;
+    background-color: #006394;
+}
