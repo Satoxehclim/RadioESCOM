@@ -58,3 +58,20 @@ a {
   a:active {
     color: #94b8d7;
   }
+  .sesionBox{
+    background-color: #012e46  ;
+    width: 18rem;;
+  }
+  .colorTituloSesion{
+    color: #006394;
+
+  }
+  .centerItems{
+    display: flex;
+    justify-content: center;
+  }
+  .imagenCard{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+  }
