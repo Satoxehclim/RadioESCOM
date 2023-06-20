@@ -1,5 +1,5 @@
 .topnav{
-    background-color: #542141;
+    background-color: #012e46;
 }
 .botnav{
     background-color: #303443;
@@ -8,15 +8,19 @@
 .btn.btn-1{
     border-color: #006394;
     background-color:  #006394;
-    color: aliceblue;
+    color: #f0f8ff;
+    font-size: small  ;
 }
 .colorTitulo{
-    font-style: oblique;
-    color: aliceblue;
+    font-size: x-large;
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: #f0f8ff;
 }
 .bottomtext{
     font-style: oblique;
-    color: aliceblue;
+    color: #f0f8ff;
 }
 .togglercolorRE{
     color: #006394;
@@ -26,4 +30,15 @@
 .bannerIMG{
     width: 35%;
     height: auto;
+}
+
+.logoNavBar{
+    width: 9%;
+}
+.imgopcion{
+    width: 15%;
+    height: auto;
+}
+.background-pagina{
+    background-color: #94b8d7;
 }
