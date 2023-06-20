@@ -1,0 +1,43 @@
+CREATE TABLE Usuarios (
+    ID INTEGER PRIMARY KEY,
+    Nombre TEXT NOT NULL,
+    Apellido TEXT NOT NULL,
+    CorreoElectronico TEXT NOT NULL,
+    Boleta numeric NOT NULL,
+    Contraseña TEXT NOT NULL
+);
+
+CREATE TABLE Comentarios (
+    ID INTEGER PRIMARY KEY,
+    Contenido TEXT NOT NULL,
+    Fecha TEXT NOT NULL,
+    ID_Usuario INTEGER NOT null,
+    ID_Comida integer not null,
+    ID_Noticias integer not null,
+    FOREIGN KEY (ID_Usuario) REFERENCES Usuarios(ID),
+    FOREIGN KEY (ID_Comida) REFERENCES Comida(Nombre),
+    foreign key (ID_Noticias) references Noticias(ID) 
+);
+
+CREATE TABLE Comida (
+    ID INTEGER PRIMARY KEY,
+    Nombre TEXT not null,
+    Descripción TEXT not null,
+    Precio REAL not null,
+    ID_Usuario INTEGER not null,
+    FOREIGN KEY (ID_Usuario) REFERENCES Usuarios(ID)
+);
+
+CREATE TABLE Noticias (
+    ID INTEGER PRIMARY KEY,
+    Titulo TEXT not null,
+    Contenido TEXT not null,
+    Fecha TEXT not null
+);
+
+CREATE TABLE EstacionesRadio (
+    ID INTEGER PRIMARY KEY,
+    Nombre TEXT,
+    Descripción TEXT,
+    URL TEXT
+);
