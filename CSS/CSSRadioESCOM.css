@@ -42,3 +42,19 @@
 .background-pagina{
     background-color: #94b8d7;
 }
+a {
+    outline: none;
+    text-decoration: none;
+  }
+  
+  a:link {
+    color: #94b8d7;
+  }
+  
+  a:visited {
+    color: #94b8d7;
+  }
+  
+  a:active {
+    color: #94b8d7;
+  }
