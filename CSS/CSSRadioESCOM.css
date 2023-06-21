@@ -22,6 +22,10 @@
     font-style: oblique;
     color: #f0f8ff;
 }
+.titletext{
+  font-family: 'Poppins', sans-serif;
+  color: #012e46;
+}
 .togglercolorRE{
     color: #006394;
     border-color: #006394;
@@ -45,33 +49,41 @@
 a {
     outline: none;
     text-decoration: none;
-  }
-  
-  a:link {
+}
+a:link {
     color: #94b8d7;
-  }
-  
-  a:visited {
+} 
+a:visited {
     color: #94b8d7;
-  }
-  
-  a:active {
+}
+a:active {
     color: #94b8d7;
-  }
-  .sesionBox{
+}
+.sesionBox{
     background-color: #012e46  ;
     width: 18rem;;
-  }
-  .colorTituloSesion{
+}
+.colorTituloSesion{
     color: #006394;
 
-  }
-  .centerItems{
+}
+.centerItems{
     display: flex;
     justify-content: center;
-  }
-  .imagenCard{
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-  }
+}
+.imagenCard{
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+.izqpos{
+    display: flex;
+    justify-content: left;
+}
+body {
+    overflow-x: hidden;
+}
+.cards-padding{
+  margin-left: 5%;
+  margin-right: 5%;
+}
