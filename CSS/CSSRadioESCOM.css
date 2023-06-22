@@ -72,10 +72,15 @@ a:active {
     justify-content: center;
 }
 .imagenCard{
-  height: 200px;
-  width: 200px;
+  height: 240px;
+  width: 240px;
   border-radius: 50%;
 }
+.imagenCard1{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+  }
 .izqpos{
     display: flex;
     justify-content: left;
