@@ -21,7 +21,6 @@ GO
 CREATE PROCEDURE RegistroPublicacion 
 	-- Add the parameters for the stored procedure here
 	@descripcion nvarchar(255) = NULL,
-	@fecha DATE = getDATE,
 	@Tipo nvarchar(50)= NULL,
 	@id_usuario int = 0
 AS
@@ -32,6 +31,7 @@ BEGIN
 
     -- Insert statements for procedure here
 	DECLARE @id_tipo INT;
+	DECLARE @fecha nvarchar(255) = CAST(GETDATE() as NVARCHAR(255));
 	SET @id_tipo = (select T.id_tipo from TipoPublicacion T where T.tipo=@Tipo);
 	INSERT INTO Publicacion(descripcion,fecha,id_usuario,id_tipo) VALUES(@descripcion,@fecha,@id_usuario,@id_tipo);
 END

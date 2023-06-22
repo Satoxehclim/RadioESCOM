@@ -31,3 +31,8 @@ CREATE TABLE Comentario (
 	FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario),
     FOREIGN KEY (id_publicacion) REFERENCES publicacion(id_publicacion)
 );
+
+CREATE TABLE Programa (
+    id_programa int IDENTITY(1,1) PRIMARY KEY,
+	programa char(255) NOT NULL
+);
