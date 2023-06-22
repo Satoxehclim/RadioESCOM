@@ -31,16 +31,3 @@ idVideo='ulfeM8JGq7s';
  var done = true;
  function onPlayerStateChange(event) {
  }
-
- $(function(){
-    $.ajax({
-        method:"POST",
-        url:"https://dummyjson.com/auth/login",
-        contentType : "application/JSON",
-        data : dat,
-    }).done(function(resultado){
-        resultado.forEach(element => {
-            
-        });
-    });
- });

@@ -1,4 +1,5 @@
-<?php     
+<?php
+    header('Access-Control-Allow-Origin: *');     
      function OpenConnection(){
         $serverName = "DESKTOP-142MO04\SQLEXPRESS";
         $connectionOptions = array("Database"=>"RadioESCOM",

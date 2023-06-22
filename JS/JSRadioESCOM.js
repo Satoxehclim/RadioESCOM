@@ -23,6 +23,7 @@ $(function(){
         $('#escomercado').hide();
         $('#sesion').hide();
         $('#inicio').hide();
+        
     });
     $('#navNoticias').click(function(){
         $('#programas').hide();
@@ -32,6 +33,30 @@ $(function(){
         $('#escomercado').hide();
         $('#sesion').hide();
         $('#inicio').hide();
+        $.post('http://localhost/conexion-base/pedirPublicacion.php',{data:'Noticias'},null,'json').done(function(response){
+            for(var i=0;i<response.length;i++){
+                var id =response[i].id;
+                var fecha = response[i].fecha.date;
+                var descripcion =response[i].descripcion;
+                var nombre=response[i].nombre;
+                var appat=response[i].appat;
+                var apmat=response[i].apmat;
+                var cards=  '<div class="col">'+
+                                '<div class="card h-100">'+
+                                    '<input id="prodId" name="prodId" type="hidden" value="'+id+'">'+
+                                    '<img src="./assets/Noticias Logo.png" class="card-img-top" >'+
+                                    '<div class="card-body">'+
+                                        '<h5 class="card-title">'+nombre+' '+appat+' '+apmat+'</h5>'+
+                                        '<p class="card-text">'+descripcion+'</p>'+
+                                    '</div>'+
+                                    '<div class="card-footer">'+
+                                        '<small class="text-body-secondary">Fecha de creacion '+fecha+'</small>'
+                                    '</div>'+
+                                '</div>'+
+                            '</div>';
+                $("#SeccionNoticias").append(cards);
+            }
+        });
     });
     $('#navForo').click(function(){
         $('#programas').hide();
@@ -41,6 +66,30 @@ $(function(){
         $('#escomercado').hide();
         $('#sesion').hide();
         $('#inicio').hide();
+        $.post('http://localhost/conexion-base/pedirPublicacion.php',{data:'Foro'},null,'json').done(function(response){
+            for(var i=0;i<response.length;i++){
+                var id =response[i].id;
+                var fecha = response[i].fecha.date;
+                var descripcion =response[i].descripcion;
+                var nombre=response[i].nombre;
+                var appat=response[i].appat;
+                var apmat=response[i].apmat;
+                var cards=  '<div class="col">'+
+                                '<div class="card h-100">'+
+                                    '<input id="prodId" name="prodId" type="hidden" value="'+id+'">'+
+                                    '<img src="./assets/ForoLogo.png" class="card-img-top" >'+
+                                    '<div class="card-body">'+
+                                        '<h5 class="card-title">'+nombre+' '+appat+' '+apmat+'</h5>'+
+                                        '<p class="card-text">'+descripcion+'</p>'+
+                                    '</div>'+
+                                    '<div class="card-footer">'+
+                                        '<small class="text-body-secondary">Fecha de creacion '+fecha+'</small>'
+                                    '</div>'+
+                                '</div>'+
+                            '</div>';
+                $("#SeccionForo").append(cards);
+            }
+        });
     });
     $('#navMenu').click(function(){
         $('#programas').hide();
@@ -50,6 +99,30 @@ $(function(){
         $('#escomercado').hide();
         $('#sesion').hide();
         $('#inicio').hide();
+        $.post('http://localhost/conexion-base/pedirPublicacion.php',{data:'Menu'},null,'json').done(function(response){
+            for(var i=0;i<response.length;i++){
+                var id =response[i].id;
+                var fecha = response[i].fecha.date;
+                var descripcion =response[i].descripcion;
+                var nombre=response[i].nombre;
+                var appat=response[i].appat;
+                var apmat=response[i].apmat;
+                var cards=  '<div class="col">'+
+                                '<div class="card h-100">'+
+                                    '<input id="prodId" name="prodId" type="hidden" value="'+id+'">'+
+                                    '<img src="./assets/MenuLogo.png" class="card-img-top" >'+
+                                    '<div class="card-body">'+
+                                        '<h5 class="card-title">'+nombre+' '+appat+' '+apmat+'</h5>'+
+                                        '<p class="card-text">'+descripcion+'</p>'+
+                                    '</div>'+
+                                    '<div class="card-footer">'+
+                                        '<small class="text-body-secondary">Fecha de creacion '+fecha+'</small>'
+                                    '</div>'+
+                                '</div>'+
+                            '</div>';
+                $("#SeccionMenu").append(cards);
+            }
+        });
     });
     $('#navEscomercado').click(function(){
         $('#programas').hide();
@@ -59,6 +132,30 @@ $(function(){
         $('#escomercado').show();
         $('#sesion').hide();
         $('#inicio').hide();
+        $.post('http://localhost/conexion-base/pedirPublicacion.php',{data:'Mercado'},null,'json').done(function(response){
+            for(var i=0;i<response.length;i++){
+                var id =response[i].id;
+                var fecha = response[i].fecha.date;
+                var descripcion =response[i].descripcion;
+                var nombre=response[i].nombre;
+                var appat=response[i].appat;
+                var apmat=response[i].apmat;
+                var cards=  '<div class="col">'+
+                                '<div class="card h-100">'+
+                                    '<input id="prodId" name="prodId" type="hidden" value="'+id+'">'+
+                                    '<img src="./assets/ESCOMercadologo.png" class="card-img-top" >'+
+                                    '<div class="card-body">'+
+                                        '<h5 class="card-title">'+nombre+' '+appat+' '+apmat+'</h5>'+
+                                        '<p class="card-text">'+descripcion+'</p>'+
+                                    '</div>'+
+                                    '<div class="card-footer">'+
+                                        '<small class="text-body-secondary">Fecha de creacion '+fecha+'</small>'
+                                    '</div>'+
+                                '</div>'+
+                            '</div>';
+                $("#SeccionMercado").append(cards);
+            }
+        });
     });
     $('#navSesion').click(function(){
         $('#programas').hide();
