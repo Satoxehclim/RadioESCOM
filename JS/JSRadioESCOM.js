@@ -1,5 +1,27 @@
+function maximo(campo,limite){
+    if(campo.value.length>=limite){
+        campo.value=campo.value.substring(0,limite);
+    }
+}
 $(function(){
-    var cont=0;
+    //variables globales
+    var cont1=0;
+    var cont2=0;
+    var cont3=0;
+    var cont4=0;
+    var id=0;
+    var nombre='';
+    var appat='';
+    var apmat='';
+    var correo='';
+    var password='';
+    //Cosas que mostrar iniciando sesion
+    $('#NuevoForo').hide();
+    $('#NuevoMenu').hide();
+    $('#NuevoMercado').hide();
+    $('#navCloseSesion').hide();
+    $('#NombreSesion').hide();
+    ///////////////////////////
     $('#programas').hide();
     $('#noticias').hide();
     $('#foro').hide();
@@ -34,11 +56,11 @@ $(function(){
         $('#escomercado').hide();
         $('#sesion').hide();
         $('#inicio').hide();
-        if (cont==0) {
+        if (cont1==0) {
             $.post('http://localhost/conexion-base/pedirPublicacion.php',{data:'Noticias'},null,'json').done(function(response){
                 for(var i=0;i<response.length;i++){
                     var id =response[i].id;
-                    var fecha = response[i].fecha.date;
+                    var fecha = response[i].fecha.date.split(' ');
                     var descripcion =response[i].descripcion;
                     var nombre=response[i].nombre;
                     var appat=response[i].appat;
@@ -52,13 +74,13 @@ $(function(){
                                             '<p class="card-text">'+descripcion+'</p>'+
                                         '</div>'+
                                         '<div class="card-footer">'+
-                                            '<small class="text-body-secondary">Fecha de creacion '+fecha+'</small>'
+                                            '<small class="text-body-secondary">Fecha de creacion '+fecha[0]+'</small>'
                                         '</div>'+
                                     '</div>'+
                                 '</div>';
                     $("#SeccionNoticias").append(cards);
                 }
-                cont=1;
+                cont1=1;
             });
         }
     });
@@ -70,11 +92,11 @@ $(function(){
         $('#escomercado').hide();
         $('#sesion').hide();
         $('#inicio').hide();
-        if (cont==0) {
+        if (cont2==0) {
             $.post('http://localhost/conexion-base/pedirPublicacion.php',{data:'Foro'},null,'json').done(function(response){
                 for(var i=0;i<response.length;i++){
                     var id =response[i].id;
-                    var fecha = response[i].fecha.date;
+                    var fecha = response[i].fecha.date.split(' ');
                     var descripcion =response[i].descripcion;
                     var nombre=response[i].nombre;
                     var appat=response[i].appat;
@@ -88,13 +110,13 @@ $(function(){
                                             '<p class="card-text">'+descripcion+'</p>'+
                                         '</div>'+
                                         '<div class="card-footer">'+
-                                            '<small class="text-body-secondary">Fecha de creacion '+fecha+'</small>'
+                                            '<small class="text-body-secondary">Fecha de creacion '+fecha[0]+'</small>'
                                         '</div>'+
                                     '</div>'+
                                 '</div>';
                     $("#SeccionForo").append(cards);
                 }
-                cont=1;
+                cont2=1;
             });
         }
     });
@@ -106,11 +128,11 @@ $(function(){
         $('#escomercado').hide();
         $('#sesion').hide();
         $('#inicio').hide();
-        if (cont==0) {
+        if (cont3==0) {
             $.post('http://localhost/conexion-base/pedirPublicacion.php',{data:'Menu'},null,'json').done(function(response){
                 for(var i=0;i<response.length;i++){
                     var id =response[i].id;
-                    var fecha = response[i].fecha.date;
+                    var fecha = response[i].fecha.date.split(' ');
                     var descripcion =response[i].descripcion;
                     var nombre=response[i].nombre;
                     var appat=response[i].appat;
@@ -124,13 +146,13 @@ $(function(){
                                             '<p class="card-text">'+descripcion+'</p>'+
                                         '</div>'+
                                         '<div class="card-footer">'+
-                                            '<small class="text-body-secondary">Fecha de creacion '+fecha+'</small>'
+                                            '<small class="text-body-secondary">Fecha de creacion '+fecha[0]+'</small>'
                                         '</div>'+
                                     '</div>'+
                                 '</div>';
                     $("#SeccionMenu").append(cards);
                 }
-                cont=1;
+                cont3=1;
             });
         }
     });
@@ -142,11 +164,11 @@ $(function(){
         $('#escomercado').show();
         $('#sesion').hide();
         $('#inicio').hide();
-        if (cont==0) {
+        if (cont4==0) {
             $.post('http://localhost/conexion-base/pedirPublicacion.php',{data:'Mercado'},null,'json').done(function(response){
                 for(var i=0;i<response.length;i++){
                     var id =response[i].id;
-                    var fecha = response[i].fecha.date;
+                    var fecha = response[i].fecha.date.split(' ');
                     var descripcion =response[i].descripcion;
                     var nombre=response[i].nombre;
                     var appat=response[i].appat;
@@ -160,13 +182,13 @@ $(function(){
                                             '<p class="card-text">'+descripcion+'</p>'+
                                         '</div>'+
                                         '<div class="card-footer">'+
-                                            '<small class="text-body-secondary">Fecha de creacion '+fecha+'</small>'
+                                            '<small class="text-body-secondary">Fecha de creacion '+fecha[0]+'</small>'
                                         '</div>'+
                                     '</div>'+
                                 '</div>';
                     $("#SeccionMercado").append(cards);
                 }
-            cont=1;
+            cont4=1;
             });
         }
     });
@@ -196,11 +218,11 @@ $(function(){
         $('#escomercado').hide();
         $('#sesion').hide();
         $('#inicio').hide();
-        if (cont==0) {
+        if (cont1==0) {
             $.post('http://localhost/conexion-base/pedirPublicacion.php',{data:'Noticias'},null,'json').done(function(response){
                 for(var i=0;i<response.length;i++){
                     var id =response[i].id;
-                    var fecha = response[i].fecha.date;
+                    var fecha = response[i].fecha.date.split(' ');
                     var descripcion =response[i].descripcion;
                     var nombre=response[i].nombre;
                     var appat=response[i].appat;
@@ -214,13 +236,13 @@ $(function(){
                                             '<p class="card-text">'+descripcion+'</p>'+
                                         '</div>'+
                                         '<div class="card-footer">'+
-                                            '<small class="text-body-secondary">Fecha de creacion '+fecha+'</small>'
+                                            '<small class="text-body-secondary">Fecha de creacion '+fecha[0]+'</small>'
                                         '</div>'+
                                     '</div>'+
                                 '</div>';
                     $("#SeccionNoticias").append(cards);
                 }
-                cont=1;
+                cont1=1;
             });
         }
     });
@@ -232,11 +254,11 @@ $(function(){
         $('#escomercado').hide();
         $('#sesion').hide();
         $('#inicio').hide();
-        if (cont==0) {
-            $.post('http://localhost/conexion-base/pedirPublicacion.php',{data:'Noticias'},null,'json').done(function(response){
+        if (cont2==0) {
+            $.post('http://localhost/conexion-base/pedirPublicacion.php',{data:'Foro'},null,'json').done(function(response){
                 for(var i=0;i<response.length;i++){
                     var id =response[i].id;
-                    var fecha = response[i].fecha.date;
+                    var fecha = response[i].fecha.date.split(' ');
                     var descripcion =response[i].descripcion;
                     var nombre=response[i].nombre;
                     var appat=response[i].appat;
@@ -244,19 +266,19 @@ $(function(){
                     var cards=  '<div class="col">'+
                                     '<div class="card h-100">'+
                                         '<input id="prodId" name="prodId" type="hidden" value="'+id+'">'+
-                                        '<img src="./assets/Noticias Logo.png" class="card-img-top" >'+
+                                        '<img src="./assets/ForoLogo.png" class="card-img-top" >'+
                                         '<div class="card-body">'+
                                             '<h5 class="card-title">'+nombre+' '+appat+' '+apmat+'</h5>'+
                                             '<p class="card-text">'+descripcion+'</p>'+
                                         '</div>'+
                                         '<div class="card-footer">'+
-                                            '<small class="text-body-secondary">Fecha de creacion '+fecha+'</small>'
+                                            '<small class="text-body-secondary">Fecha de creacion '+fecha[0]+'</small>'
                                         '</div>'+
                                     '</div>'+
                                 '</div>';
-                    $("#SeccionNoticias").append(cards);
+                    $("#SeccionForo").append(cards);
                 }
-                cont=1;
+                cont2=1;
             });
         }
     });
@@ -268,11 +290,11 @@ $(function(){
         $('#escomercado').hide();
         $('#sesion').hide();
         $('#inicio').hide();
-        if (cont==0) {
+        if (cont3==0) {
             $.post('http://localhost/conexion-base/pedirPublicacion.php',{data:'Menu'},null,'json').done(function(response){
                 for(var i=0;i<response.length;i++){
                     var id =response[i].id;
-                    var fecha = response[i].fecha.date;
+                    var fecha = response[i].fecha.date.split(' ');
                     var descripcion =response[i].descripcion;
                     var nombre=response[i].nombre;
                     var appat=response[i].appat;
@@ -286,13 +308,13 @@ $(function(){
                                             '<p class="card-text">'+descripcion+'</p>'+
                                         '</div>'+
                                         '<div class="card-footer">'+
-                                            '<small class="text-body-secondary">Fecha de creacion '+fecha+'</small>'
+                                            '<small class="text-body-secondary">Fecha de creacion '+fecha[0]+'</small>'
                                         '</div>'+
                                     '</div>'+
                                 '</div>';
                     $("#SeccionMenu").append(cards);
                 }
-                cont=1;
+                cont3=1;
             });
         }
     });
@@ -304,11 +326,11 @@ $(function(){
         $('#escomercado').show();
         $('#sesion').hide();
         $('#inicio').hide();
-        if (cont==0) {
+        if (cont4==0) {
             $.post('http://localhost/conexion-base/pedirPublicacion.php',{data:'Mercado'},null,'json').done(function(response){
                 for(var i=0;i<response.length;i++){
                     var id =response[i].id;
-                    var fecha = response[i].fecha.date;
+                    var fecha = response[i].fecha.date.split(' ');
                     var descripcion =response[i].descripcion;
                     var nombre=response[i].nombre;
                     var appat=response[i].appat;
@@ -322,13 +344,13 @@ $(function(){
                                             '<p class="card-text">'+descripcion+'</p>'+
                                         '</div>'+
                                         '<div class="card-footer">'+
-                                            '<small class="text-body-secondary">Fecha de creacion '+fecha+'</small>'
+                                            '<small class="text-body-secondary">Fecha de creacion '+fecha[0]+'</small>'
                                         '</div>'+
                                     '</div>'+
                                 '</div>';
                     $("#SeccionMercado").append(cards);
                 }
-            cont=1;
+            cont4=1;
             });
         }
     });

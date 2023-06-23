@@ -14,9 +14,18 @@
 .colorTitulo{
     font-size: x-large;
     display: flex;
+    vertical-align: middle;
     align-items: center;
     font-family: 'Poppins', sans-serif;
-    color: #f0f8ff;
+    color: #94b8d7;
+}
+.colorName{
+    font-size: large;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: #94b8d7;
 }
 .bottomtext{
     font-style: oblique;
@@ -61,7 +70,7 @@ a:active {
 }
 .sesionBox{
     background-color: #012e46  ;
-    width: 18rem;;
+    width: 18rem;
 }
 .colorTituloSesion{
     color: #006394;

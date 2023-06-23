@@ -27,6 +27,8 @@
             </div>
             <div class="d-flex">
                 <button class="btn btn-sm  btn-1 me-2" type="button" id="navSesion">Iniciar Sesion</button>
+                <h5 class="colorName me-2" id="NombreSesion"></h5>
+                <button class="btn btn-sm  btn-danger me-2" type="button" id="navCloseSesion">Cerrar Sesion</button>
             </div>
         </div>
     </nav>  
@@ -59,8 +61,9 @@
     <!--Programas-->
     <div class="container-center cards-padding text-center mb-5" id="programas">
         <h1 class="titletext text-center">Programas RadioESCOM</h1>
-        <div id="1"></div>
-        <div id="2"></div>
+        <div class="row row-cols-1 row-cols-md-3 g-5" id="SeccionProgramas">
+            
+        </div>
     </div>
     <!--Noticias-->    
     <div class="container-center cards-padding text-center mb-5" id="noticias">
@@ -73,21 +76,57 @@
     <div class="container-center cards-padding text-center mb-5" id="foro">
         <h1 class="titletext text-center">Foro ESCOM</h1>
         <div class="row row-cols-1 row-cols-md-4 g-5" id="SeccionForo">
-            
+            <div class="col" id="NuevoForo">
+                <div class="card h-100">
+                    <h1 class="card-title colorTituloSesion">Nueva publicación</h1>
+                    <p class="centerItems">
+                        <img src="./assets/ForoLogo.png" class="imagenCard1" alt="Logo">
+                    </p>
+                    <div class="card-body" >
+                        <textarea class="form-control mb-3" rows="5" maxlength="255" id="descripcionForoNuevo" placeholder="Escribe tu publicacion"></textarea>
+                        <label for="descripcionForoNuevo"  class="form-label">Maximo de 255 caracteres</label>
+                        <input class="btn btn-1" id="ForoNuevo" type="button" value="Registrarse">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!--Menu del dia-->
     <div class="container-center cards-padding text-center mb-5" id="menu">
         <h1 class="titletext text-center">Menú del día</h1>
         <div class="row row-cols-1 row-cols-md-4 g-5" id="SeccionMenu">
-            
+            <div class="col" id="NuevoMenu">
+                <div class="card h-100">
+                    <h1 class="card-title colorTituloSesion">Nueva publicación</h1>
+                    <p class="centerItems">
+                        <img src="./assets/MenuLogo.png" class="imagenCard1" alt="Logo">
+                    </p>
+                    <div class="card-body" >
+                        <textarea class="form-control mb-3" rows="5" maxlength="255" id="descripcionForoNuevo" placeholder="Escribe tu publicacion"></textarea>
+                        <label for="descripcionForoNuevo"  class="form-label">Maximo de 255 caracteres</label>
+                        <input class="btn btn-1" id="MenuNuevo" type="button" value="Registrarse">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!--ESCOMercado-->
     <div class="container-center cards-padding text-center mb-5" id="escomercado">
         <h1 class="titletext text-center">ESCOMercado</h1>
         <div class="row row-cols-1 row-cols-md-4 g-5" id="SeccionMercado">
-            
+            <div class="col" id="NuevoMercado">
+                <div class="card h-100">
+                    <h1 class="card-title colorTituloSesion">Nueva publicación</h1>
+                    <p class="centerItems">
+                        <img src="./assets/ESCOMercadologo.png" class="imagenCard1" alt="Logo">
+                    </p>
+                    <div class="card-body" >
+                        <textarea class="form-control mb-3" rows="5" maxlength="255" id="descripcionForoNuevo" placeholder="Escribe tu publicacion"></textarea>
+                        <label for="descripcionForoNuevo"  class="form-label">Maximo de 255 caracteres</label>
+                        <input class="btn btn-1" id="MercadoNuevo" type="button" value="Registrarse">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!--Sesion-->
@@ -113,7 +152,7 @@
                 <input type="text" class="form-control mb-3" id="appatR" placeholder="Primer Apellido">
                 <input type="text" class="form-control mb-3" id="apmatR" placeholder="Segundo Apellido">
                 <input type="text" class="form-control mb-3" id="correoR" placeholder="Correo Electronico">
-                <input type="password" class="form-control mb-3" id="passwordR" placeholder="Contraseña">
+                <input type="text" class="form-control mb-3" id="passwordR" placeholder="Contraseña">
                 <input class="btn btn-1" id="Registro" type="button" value="Registrarse">
             </div>
         </div>
