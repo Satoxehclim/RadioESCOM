@@ -16,7 +16,7 @@ function onYouTubeIframeAPIReady() {
         var id =response[i].id;
         var programacomp =response[i].programa.split(' ');
         var programa=programacomp[0];
-        console.log(programa);
+        
         var divs ='<div class="col" id="'+id+'"></div>';
         $("#SeccionProgramas").append(divs);
         aux=id;
