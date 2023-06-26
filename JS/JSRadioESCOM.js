@@ -25,7 +25,7 @@ $(function(){
     $('#iniciarSesion').click(function(){
         correo = $('#correoIS').val();
         password = $('#passwordIS').val();
-        $.post('http://localhost/conexion-base/sesion.php',{correo: correo,password: password},null,'json').done(function(response){
+        $.post('http://localhost:8080/conexion-base/sesion.php',{correo: correo,password: password},null,'json').done(function(response){
             for(var i=0;i<response.length;i++){
                 console.log(response);
                 id=response[i].id;
@@ -51,7 +51,7 @@ $(function(){
         apmat = $('#apmatR').val();
         correo = $('#correoR').val();
         password = $('#passwordR').val();
-        $.post('http://localhost/conexion-base/registro.php',{nombre: nombre,appat: appat,apmat: apmat,correo: correo,password: password},null,'json').done(function(response){
+        $.post('http://localhost:8080/conexion-base/registro.php',{nombre: nombre,appat: appat,apmat: apmat,correo: correo,password: password},null,'json').done(function(response){
             for(var i=0;i<response.length;i++){
                 console.log(response);
                 id=response[i].id;
@@ -99,7 +99,7 @@ $(function(){
     //Agrega Publicaciones//
     $('#ForoNuevo').click(function(){
         var descripcion=$('#descripcionForoNuevo').val();
-        $.post('http://localhost/conexion-base/nuevaPublicacion.php',{descripcion: descripcion,tipo: 'Foro',id_usuario:id}).done(function(){
+        $.post('http://localhost/conexion-base:8080/nuevaPublicacion.php',{descripcion: descripcion,tipo: 'Foro',id_usuario:id}).done(function(){
             var fecha = new Date().toLocaleDateString();
             var des = $('#descripcionForoNuevo').val();
             document.getElementById("descripcionForoNuevo").value = "";
@@ -121,7 +121,7 @@ $(function(){
     });
     $('#MenuNuevo').click(function(){
         var descripcion=$('#descripcionMenuNuevo').val();
-        $.post('http://localhost/conexion-base/nuevaPublicacion.php',{descripcion: descripcion,tipo: 'Menu',id_usuario:id}).done(function(){
+        $.post('http://localhost:8080/conexion-base/nuevaPublicacion.php',{descripcion: descripcion,tipo: 'Menu',id_usuario:id}).done(function(){
             var fecha = new Date().toLocaleDateString();
             var des = $('#descripcionMenuNuevo').val();
             document.getElementById("descripcionMenuNuevo").value = "";
@@ -143,7 +143,7 @@ $(function(){
     });
     $('#MercadoNuevo').click(function(){
         var descripcion=$('#descripcionMercadoNuevo').val();
-        $.post('http://localhost/conexion-base/nuevaPublicacion.php',{descripcion: descripcion,tipo: 'Mercado',id_usuario:id}).done(function(){
+        $.post('http://localhost:8080/conexion-base/nuevaPublicacion.php',{descripcion: descripcion,tipo: 'Mercado',id_usuario:id}).done(function(){
             var fecha = new Date().toLocaleDateString();
             var des = $('#descripcionMercadoNuevo').val();
             document.getElementById("descripcionMercadoNuevo").value = "";
@@ -199,7 +199,7 @@ $(function(){
         $('#sesion').hide();
         $('#inicio').hide();
         if (cont1==0) {
-            $.post('http://localhost/conexion-base/pedirPublicacion.php',{data:'Noticias'},null,'json').done(function(response){
+            $.post('http://localhost:8080/conexion-base/pedirPublicacion.php',{data:'Noticias'},null,'json').done(function(response){
                 for(var i=0;i<response.length;i++){
                     var id =response[i].id;
                     var fecha = response[i].fecha.date.split(' ');
@@ -235,7 +235,7 @@ $(function(){
         $('#sesion').hide();
         $('#inicio').hide();
         if (cont2==0) {
-            $.post('http://localhost/conexion-base/pedirPublicacion.php',{data:'Foro'},null,'json').done(function(response){
+            $.post('http://localhost:8080/conexion-base/pedirPublicacion.php',{data:'Foro'},null,'json').done(function(response){
                 for(var i=0;i<response.length;i++){
                     var id =response[i].id;
                     var fecha = response[i].fecha.date.split(' ');
@@ -271,7 +271,7 @@ $(function(){
         $('#sesion').hide();
         $('#inicio').hide();
         if (cont3==0) {
-            $.post('http://localhost/conexion-base/pedirPublicacion.php',{data:'Menu'},null,'json').done(function(response){
+            $.post('http://localhost:8080/conexion-base/pedirPublicacion.php',{data:'Menu'},null,'json').done(function(response){
                 for(var i=0;i<response.length;i++){
                     var id =response[i].id;
                     var fecha = response[i].fecha.date.split(' ');
@@ -307,7 +307,7 @@ $(function(){
         $('#sesion').hide();
         $('#inicio').hide();
         if (cont4==0) {
-            $.post('http://localhost/conexion-base/pedirPublicacion.php',{data:'Mercado'},null,'json').done(function(response){
+            $.post('http://localhost:8080/conexion-base/pedirPublicacion.php',{data:'Mercado'},null,'json').done(function(response){
                 for(var i=0;i<response.length;i++){
                     var id =response[i].id;
                     var fecha = response[i].fecha.date.split(' ');
@@ -361,7 +361,7 @@ $(function(){
         $('#sesion').hide();
         $('#inicio').hide();
         if (cont1==0) {
-            $.post('http://localhost/conexion-base/pedirPublicacion.php',{data:'Noticias'},null,'json').done(function(response){
+            $.post('http://localhost:8080/conexion-base/pedirPublicacion.php',{data:'Noticias'},null,'json').done(function(response){
                 for(var i=0;i<response.length;i++){
                     var id =response[i].id;
                     var fecha = response[i].fecha.date.split(' ');
@@ -397,7 +397,7 @@ $(function(){
         $('#sesion').hide();
         $('#inicio').hide();
         if (cont2==0) {
-            $.post('http://localhost/conexion-base/pedirPublicacion.php',{data:'Foro'},null,'json').done(function(response){
+            $.post('http://localhost:8080/conexion-base/pedirPublicacion.php',{data:'Foro'},null,'json').done(function(response){
                 for(var i=0;i<response.length;i++){
                     var id =response[i].id;
                     var fecha = response[i].fecha.date.split(' ');
@@ -433,7 +433,7 @@ $(function(){
         $('#sesion').hide();
         $('#inicio').hide();
         if (cont3==0) {
-            $.post('http://localhost/conexion-base/pedirPublicacion.php',{data:'Menu'},null,'json').done(function(response){
+            $.post('http://localhost:8080/conexion-base/pedirPublicacion.php',{data:'Menu'},null,'json').done(function(response){
                 for(var i=0;i<response.length;i++){
                     var id =response[i].id;
                     var fecha = response[i].fecha.date.split(' ');
@@ -469,7 +469,7 @@ $(function(){
         $('#sesion').hide();
         $('#inicio').hide();
         if (cont4==0) {
-            $.post('http://localhost/conexion-base/pedirPublicacion.php',{data:'Mercado'},null,'json').done(function(response){
+            $.post('http://localhost:8080/conexion-base/pedirPublicacion.php',{data:'Mercado'},null,'json').done(function(response){
                 for(var i=0;i<response.length;i++){
                     var id =response[i].id;
                     var fecha = response[i].fecha.date.split(' ');

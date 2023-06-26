@@ -11,7 +11,7 @@ var idVideo;
 var aux=1;
 function onYouTubeIframeAPIReady() {
   $(function(){
-    $.post('http://localhost/conexion-base/pedirPrograma.php',{data:''},null,'json').done(function(response){
+    $.post('http://localhost:8080/conexion-base/pedirPrograma.php',{data:''},null,'json').done(function(response){
       for(var i=0;i<response.length;i++){
         var id =response[i].id;
         var programacomp =response[i].programa.split(' ');
